@@ -1,0 +1,26 @@
+[
+  {
+    "username": "ramsai924",
+    "email": "ram@gmail.com",
+    "password": "123456",
+    "role": "admin",
+    "id": "bf687236-9200-49dc-9105-cc332aaa43d9",
+    "token": "478f323c-aff7-4f2b-ac0a-d2caa958e1be-1790614326863"
+  },
+  {
+    "username": "ram",
+    "email": "ram.test@gmail.com",
+    "password": "123456",
+    "role": "user",
+    "id": "47503e86-d0d8-4a98-8e59-152d6b7a43d2",
+    "token": "6eebe6ed-bff9-444f-b157-22189285bc21-1790614416679"
+  },
+  {
+    "username": "raj",
+    "email": "raj.test@gmail.com",
+    "password": "123456",
+    "role": "user",
+    "id": "d41ac7d3-1d07-4cd4-958f-dceb2b905d00",
+    "token": "95699143-344b-4308-b0b7-60ba02e74ee2-1790621390513"
+  }
+]
