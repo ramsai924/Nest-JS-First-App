@@ -28,7 +28,7 @@ export class AuthGuard implements CanActivate {
         }
 
         const user = await checkAuthorization(token);
-
+        
         if (!user) {
             throw new UnauthorizedException(
                 "Unauthorized access",

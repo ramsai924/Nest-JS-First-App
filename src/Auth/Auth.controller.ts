@@ -26,9 +26,9 @@ export class AuthController {
     }
 
     @Get("/user/info")
+    @UseGuards(AuthGuard)
     @Message("User info fetched successfully!!")
     async getUserById(@CurrentUser() user: IUser): Promise<IUser> {
-
         if(user && user.id) {
             return this.authService.getUserById(user.id);
         }

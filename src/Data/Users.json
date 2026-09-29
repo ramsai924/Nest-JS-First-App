@@ -24,5 +24,13 @@
     "role": "user",
     "id": "d41ac7d3-1d07-4cd4-958f-dceb2b905d00",
     "token": "95699143-344b-4308-b0b7-60ba02e74ee2-1790621390513"
+  },
+  {
+    "username": "raj1",
+    "email": "raj1.test@gmail.com",
+    "password": "123456",
+    "role": "user",
+    "id": "06b0d520-c4b8-4286-91dd-0848473c89ca",
+    "token": "9dedbff2-e260-4721-8475-cc6e1fcf1ac5-1790706232668"
   }
 ]
