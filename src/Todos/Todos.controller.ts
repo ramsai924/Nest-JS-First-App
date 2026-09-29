@@ -14,12 +14,12 @@ export class TodosController {
 
     @Post("/create")
     async createTodo(@Body() body: TodosDto, @CurrentUser() user: IUser): Promise<ITodo> {
-        return this.todoService.createTodo(body, user.id);
+        return this.todoService.createTodo(body, user._id);
     }
 
     @Get('/user')
     @Message("User todos fetched successfully!!")
     async getAllTodosByUser(@CurrentUser() user: IUser): Promise<ITodo[]> {
-        return this.todoService.getUserTodos(user.id);
+        return this.todoService.getUserTodos(user._id);
     }
 }

@@ -1,4 +1,4 @@
-import { Body, Controller, Get, NotFoundException, Param, Post, Request, UseGuards } from "@nestjs/common";
+import { Body, Controller, Get, HttpCode, NotFoundException, Param, Post, Request, UseGuards } from "@nestjs/common";
 import { AuthService } from "./Auth.service.js";
 import { UserDto } from "./dto/User.dto.js";
 import type { IUser } from "./models.js";
@@ -26,17 +26,19 @@ export class AuthController {
     }
 
     @Get("/user/info")
+    @UseGuards(AuthGuard)
     @Message("User info fetched successfully!!")
     async getUserById(@CurrentUser() user: IUser): Promise<IUser> {
 
-        if(user && user.id) {
-            return this.authService.getUserById(user.id);
+        if(user && user._id) {
+            return this.authService.getUserById(user._id);
         }
 
         throw new NotFoundException("User not found");
     }
 
     @Post("/signin")
+    @HttpCode(200)
     @Message("User signed in successfully!!")
     async signIn(@Body() body: { email: string; password: string }): Promise<{ token: string }> {
         return this.authService.signIn(body.email, body.password);

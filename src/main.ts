@@ -11,6 +11,8 @@ async function bootstrap() {
 
   // Enable global validation pipe with whitelist and transformation
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
-  await app.listen(process.env.PORT ?? 3000);
+  const PORT = process.env.PORT ?? 3000
+  console.log("App running on PORT : ", PORT)
+  await app.listen(PORT);
 }
 await bootstrap();

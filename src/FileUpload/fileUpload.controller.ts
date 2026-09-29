@@ -108,6 +108,6 @@ export class FileUploadController {
     @HttpCode(HttpStatus.OK)
     @Message("Profile photo updloaded successfully!!")
     async updatedProfile(@UploadedFile() file: Express.Multer.File, @Body() body: { user_Id: string }) {
-        return this.authService.updateUserProfile(file, body?.user_Id)
+        // return this.authService.updateUserProfile(file, body?.user_Id)
     }
 }
