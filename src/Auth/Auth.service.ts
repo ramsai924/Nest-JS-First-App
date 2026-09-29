@@ -1,7 +1,7 @@
 import { NotFoundException } from "@nestjs/common";
 import { IUser } from "./models.js";
 import { v4 as uuidv4 } from 'uuid';
-import { writeFile } from 'fs/promises';
+import { unlink, writeFile } from 'fs/promises';
 import { join } from 'path';
 import { readData } from "../utils/readData.js";
 
@@ -44,5 +44,31 @@ export class AuthService {
             throw new NotFoundException("No users found in DB");
         }
         return users;
+    }
+
+    async updateUserProfile(
+        file: Express.Multer.File,
+        userId: string,
+    ): Promise<IUser> {
+        const users: IUser[] = await readData(this.filePath);
+
+        const user = users.find((u) => u.id === userId);
+
+        if (!user) {
+            // Delete uploaded file because user doesn't exist
+            await unlink(file.path);
+
+            throw new NotFoundException("No user found in DB");
+        }
+
+        user.profilePhoto = file.filename;
+
+        await writeFile(
+            this.filePath,
+            JSON.stringify(users, null, 2),
+            "utf-8",
+        );
+
+        return user;
     }
 }

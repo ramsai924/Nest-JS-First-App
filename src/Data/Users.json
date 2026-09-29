@@ -5,7 +5,8 @@
     "password": "123456",
     "role": "admin",
     "id": "bf687236-9200-49dc-9105-cc332aaa43d9",
-    "token": "478f323c-aff7-4f2b-ac0a-d2caa958e1be-1790614326863"
+    "token": "478f323c-aff7-4f2b-ac0a-d2caa958e1be-1790614326863",
+    "profilePhoto": "1790667534733-251309471.png"
   },
   {
     "username": "ram",
@@ -13,7 +14,8 @@
     "password": "123456",
     "role": "user",
     "id": "47503e86-d0d8-4a98-8e59-152d6b7a43d2",
-    "token": "6eebe6ed-bff9-444f-b157-22189285bc21-1790614416679"
+    "token": "6eebe6ed-bff9-444f-b157-22189285bc21-1790614416679",
+    "profilePhoto": "1790668134672-701708094.jpeg"
   },
   {
     "username": "raj",
