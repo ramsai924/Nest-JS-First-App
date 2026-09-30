@@ -8,7 +8,7 @@ import { Todo, TodoSchema } from "../Schemas/Todo.schema.js";
 
 @Module({
     imports: [AuthModule, MongooseModule.forFeature([
-        { name: Todo.apply.name, schema: TodoSchema }
+        { name: Todo.name, schema: TodoSchema }
     ])],
     controllers: [
         TodosController,
@@ -17,4 +17,4 @@ import { Todo, TodoSchema } from "../Schemas/Todo.schema.js";
         TodoService,
     ],
 })
-export class TodosModule { }
+export class TodosModule {}

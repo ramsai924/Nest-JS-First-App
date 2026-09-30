@@ -3,7 +3,9 @@ import { TodosDto } from "./dto/todos.dto.js";
 import { InjectModel } from "@nestjs/mongoose";
 import { Todo } from "../Schemas/Todo.schema.js";
 import { Model } from "mongoose";
+import { Injectable } from "@nestjs/common";
 
+@Injectable()
 export class TodoService {
     constructor(@InjectModel(Todo.name) private TodoModel: Model<Todo>){}
 
